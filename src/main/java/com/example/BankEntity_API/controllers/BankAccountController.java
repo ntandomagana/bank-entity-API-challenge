@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST Controller for BankAccount API.
+ * Handles HTTP requests related to bank accounts.
+ */
+
 @RestController
 @RequestMapping("/api/v1/accounts")
 public class BankAccountController {
@@ -16,16 +21,33 @@ public class BankAccountController {
         this.service = service;
     }
 
+    /**
+     * this method creates a new bank account.
+     *
+     * @param bankAccount BankAccount object from request body
+     * @return the created BankAccount
+     */
     @PostMapping
     public BankAccount createAccount(@RequestBody BankAccount bankAccount) {
         return service.createAccount(bankAccount);
     }
 
+    /**
+     * Retrieves a bank account by ID.
+     *
+     * @param id ID of the bank account
+     * @return BankAccount object if found
+     */
     @GetMapping("/{id}")
     public BankAccount getAccount(@PathVariable Long id) {
         return service.getAccountById(id);
     }
 
+    /**
+     * Retrieves all bank accounts.
+     *
+     * @return List of BankAccount objects
+     */
     @GetMapping
     public List<BankAccount> getAllAccounts() {
         return service.getAllAccounts();

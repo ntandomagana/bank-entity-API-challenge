@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Implementation of BankAccountService interface.
+ * Handles business logic for bank accounts.
+ */
 @Service
 public class BankAccountServiceImpl implements BankAccountService {
 

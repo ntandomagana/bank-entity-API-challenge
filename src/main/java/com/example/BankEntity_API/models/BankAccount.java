@@ -5,6 +5,11 @@ import lombok.AllArgsConstructor;
 //import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Represents a bank account with basic information
+ * such as account holder name, balance, and type.
+ */
+
 @Entity
 //@Data
 @NoArgsConstructor
@@ -22,6 +27,7 @@ public class BankAccount {
 
     private String accountType;
 
+    // Getters and setters
     public Long getId() {
         return id;
     }
